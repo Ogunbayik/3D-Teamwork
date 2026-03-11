@@ -1,0 +1,189 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\assets\\_project\\scripts\\features\\player\\playeridlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\features\\player\\playeridlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|c:\\users\\ogun\\unityprojects\\3d-teamwork\\assets\\_project\\scripts\\features\\player\\playermovestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\features\\player\\playermovestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|c:\\users\\ogun\\unityprojects\\3d-teamwork\\assets\\_project\\scripts\\features\\player\\playergroundedstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\features\\player\\playergroundedstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|c:\\users\\ogun\\unityprojects\\3d-teamwork\\assets\\_project\\scripts\\core\\states\\basestatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\core\\states\\basestatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\assets\\_project\\scripts\\features\\player\\playerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\features\\player\\playerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\assets\\_project\\scripts\\features\\player\\playerbasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\features\\player\\playerbasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\assets\\_project\\scripts\\features\\player\\playerstatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\features\\player\\playerstatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\assets\\_project\\scripts\\services\\iinputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\services\\iinputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\assets\\_project\\scripts\\features\\playerinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\features\\playerinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\assets\\_project\\scripts\\services\\inputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A58AE83-D688-A850-F2DC-FE2923C25A66}|Assembly-CSharp.csproj|solutionrelative:assets\\_project\\scripts\\services\\inputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaseStateMachine.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Core\\States\\BaseStateMachine.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Core\\States\\BaseStateMachine.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Core\\States\\BaseStateMachine.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Core\\States\\BaseStateMachine.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAmwBQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T13:58:09.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerMoveState.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerMoveState.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerMoveState.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerMoveState.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerMoveState.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T13:55:38.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerGroundedState.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerGroundedState.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerGroundedState.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerGroundedState.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerGroundedState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:40:01.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IInputService.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Services\\IInputService.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Services\\IInputService.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Services\\IInputService.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Services\\IInputService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T13:41:07.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerBase.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerBase.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerBase.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerBase.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerBase.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:55:53.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "InputService.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Services\\InputService.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Services\\InputService.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Services\\InputService.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Services\\InputService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T13:10:48.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerInstaller.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\PlayerInstaller.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Features\\PlayerInstaller.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\PlayerInstaller.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Features\\PlayerInstaller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:53:24.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerIdleState.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerIdleState.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerIdleState.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerIdleState.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerIdleState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:35:58.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerBaseState.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerBaseState.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerBaseState.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerBaseState.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerBaseState.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:28:36.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerStateMachine.cs",
+              "DocumentMoniker": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerStateMachine.cs",
+              "RelativeDocumentMoniker": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerStateMachine.cs",
+              "ToolTip": "C:\\Users\\ogun\\UnityProjects\\3D-TeamWork\\Assets\\_Project\\Scripts\\Features\\Player\\PlayerStateMachine.cs",
+              "RelativeToolTip": "Assets\\_Project\\Scripts\\Features\\Player\\PlayerStateMachine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:29:59.578Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
