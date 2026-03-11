@@ -10,6 +10,12 @@ public abstract class PlayerGroundedState : PlayerBaseState
     public override void ExitState() => base.ExitState();
     public override void Tick()
     {
+        if (_player.IsJumping)
+        {
+            _stateMachine.SwitchState<PlayerAirborneState>();
+            return;
+        }
+
         if (_player.IsMoving)
             _stateMachine.SwitchState<PlayerMoveState>();
         else

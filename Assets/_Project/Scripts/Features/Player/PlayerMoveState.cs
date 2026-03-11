@@ -20,6 +20,9 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.Tick();
 
-        _player.HandleMovement();
+        var moveInput = _player.GetMoveInput();
+        var inputDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+
+        _player.Move(inputDirection);
     }
 }

@@ -3,32 +3,69 @@ using Zenject;
 
 public class PlayerBase : MonoBehaviour
 {
+    [Header("Check Settings")]
+    [SerializeField] private Transform _groundCheck;
+    [SerializeField] private float _checkRadius;
+    [SerializeField] private LayerMask _checkLayer;
+
     private IInputService _input;
 
     private CharacterController _characterController;
 
     private bool _isMoving;
+    private bool _isJumping;
+
+    private float _velocityY;
     public bool IsMoving => _isMoving;
+    public bool IsJumping => _isJumping;
+    public float VelocityY => _velocityY;
 
     [Inject]
-    public void Construct(IInputService input,CharacterController characterController)
+    public void Construct(IInputService input, CharacterController characterController)
     {
         _input = input;
         _characterController = characterController;
-
+    }
+    private void OnEnable()
+    {
         _input.OnMoveChanged += SetMoveStatus;
+        _input.OnJumpPerformed += Input_OnJumpPerformed;
+    }
+    private void OnDisable()
+    {
+        _input.OnMoveChanged -= SetMoveStatus;
+        _input.OnJumpPerformed -= Input_OnJumpPerformed;
     }
     public void SetMoveStatus(Vector2 moveVector) => _isMoving = moveVector != Vector2.zero;
-
-    public void HandleMovement()
+    public void ApplyGravity()
     {
-        var moveInput = _input.MoveInput();
-        var moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
-        var move = moveDirection * 5f * Time.deltaTime;
+        var groundedGravity = -2;
+        var gravityMultiplier = 3;
 
-        _characterController.Move(move);
+        if (IsGrounded() && _velocityY <= 0)
+            _velocityY = groundedGravity;
+        else
+            _velocityY += Physics.gravity.y * gravityMultiplier * Time.deltaTime;
     }
+    public bool IsGrounded() => Physics.CheckSphere(_groundCheck.transform.position, _checkRadius, _checkLayer);
+    public void HandleJump() => _velocityY = Mathf.Sqrt(5 * -2 * Physics.gravity.y);
+    public void Move(Vector3 movementDirection)
+    {
+        var movementSpeed = 5f;
+        Vector3 finalMovement = movementDirection * movementSpeed;
+        finalMovement.y = _velocityY;
 
+        _characterController.Move(finalMovement * Time.deltaTime);
+    }
+    public Vector2 GetMoveInput() => _input.MoveInput();
+    private void Input_OnJumpPerformed() => SetJumpStatus(true);
+    public void SetJumpStatus(bool isActive) => _isJumping = isActive;
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+
+        Gizmos.DrawSphere(_groundCheck.position, _checkRadius);
+    }
 
 
 }

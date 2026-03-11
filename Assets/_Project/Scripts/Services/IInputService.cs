@@ -6,8 +6,8 @@ using UnityEngine;
 public interface IInputService 
 {
     public event Action<Vector2> OnMoveChanged;
+    public event Action OnJumpPerformed;
 
     Vector2 MoveInput();
-    bool IsPressedJump();
     void Disable();
 }
