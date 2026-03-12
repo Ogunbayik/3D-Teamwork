@@ -8,7 +8,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void EnterState()
     {
         base.EnterState();
-        Debug.Log("Player is Idle mode on");
+        _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.IDLE_HASH, GameConstant.AnimationSettings.SMOOTH_TRANSITION);
     }
     public override void ExitState()
     {
@@ -17,7 +17,5 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Tick()
     {
         base.Tick();
-
-        
     }
 }

@@ -10,6 +10,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] private Color _color;
     [Header("Movement Settings")]
     [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _rotationSpeed;
     [Header("Jump Settings")]
     [SerializeField] private float _jumpHeight;
     [Header("Gravity Settings")]
@@ -20,6 +21,7 @@ public class PlayerData : ScriptableObject
     public string Name => _name;
     public Color Color => _color;
     public float MovementSpeed => _movementSpeed;
+    public float RotationSpeed => _rotationSpeed;
     public float JumpHeight => _jumpHeight;
     public float GravityMultiplier => _gravityMultiplier;
     public float GroundedGravity => _groundedGravity;

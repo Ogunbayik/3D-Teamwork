@@ -9,8 +9,7 @@ public class PlayerMoveState : PlayerGroundedState
     public override void EnterState()
     {
         base.EnterState();
-
-        Debug.Log("Player is Moving");
+        _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.WALK_HASH, GameConstant.AnimationSettings.QUICK_TRANSITION);
     }
     public override void ExitState()
     {
