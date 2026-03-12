@@ -3,6 +3,8 @@ using Zenject;
 
 public class PlayerBase : MonoBehaviour
 {
+    [Header("Data References")]
+    [SerializeField] private PlayerData _data;
     [Header("Check Settings")]
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private float _checkRadius;
@@ -39,20 +41,16 @@ public class PlayerBase : MonoBehaviour
     public void SetMoveStatus(Vector2 moveVector) => _isMoving = moveVector != Vector2.zero;
     public void ApplyGravity()
     {
-        var groundedGravity = -2;
-        var gravityMultiplier = 3;
-
         if (IsGrounded() && _velocityY <= 0)
-            _velocityY = groundedGravity;
+            _velocityY = _data.GroundedGravity;
         else
-            _velocityY += Physics.gravity.y * gravityMultiplier * Time.deltaTime;
+            _velocityY += Physics.gravity.y * _data.GravityMultiplier * Time.deltaTime;
     }
     public bool IsGrounded() => Physics.CheckSphere(_groundCheck.transform.position, _checkRadius, _checkLayer);
-    public void HandleJump() => _velocityY = Mathf.Sqrt(5 * -2 * Physics.gravity.y);
+    public void HandleJump() => _velocityY = Mathf.Sqrt(_data.JumpHeight * _data.JumpCoefficient * Physics.gravity.y);
     public void Move(Vector3 movementDirection)
     {
-        var movementSpeed = 5f;
-        Vector3 finalMovement = movementDirection * movementSpeed;
+        Vector3 finalMovement = movementDirection * _data.MovementSpeed;
         finalMovement.y = _velocityY;
 
         _characterController.Move(finalMovement * Time.deltaTime);

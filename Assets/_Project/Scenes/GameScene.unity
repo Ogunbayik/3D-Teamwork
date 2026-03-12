@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 218131049}
   - component: {fileID: 218131050}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Red Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2602bcdce68e82349a601e63abd9c314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 6b8464ffda59c3444a1efc2c18ad2e09, type: 2}
   _groundCheck: {fileID: 624719953}
   _checkRadius: 0.15
   _checkLayer:
@@ -326,7 +327,7 @@ GameObject:
   - component: {fileID: 652820699}
   - component: {fileID: 652820700}
   m_Layer: 0
-  m_Name: Installer
+  m_Name: LocalInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
