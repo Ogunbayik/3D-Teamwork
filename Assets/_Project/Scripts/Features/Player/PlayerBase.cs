@@ -13,8 +13,10 @@ public class PlayerBase : MonoBehaviour
 
     private IInputService _input;
 
+    private PlayerStateMachine _stateMachine;
     private AnimationController _animationController;
     private CharacterController _characterController;
+    private SkinnedMeshRenderer _meshRenderer;
 
     private bool _isJumping;
     private bool _isSprint;
@@ -22,23 +24,54 @@ public class PlayerBase : MonoBehaviour
     private float _velocityY;
     public bool IsJumping => _isJumping;
     public bool IsSprint => _isSprint;
-    public float VelocityY => _velocityY;
     public AnimationController AnimationController => _animationController;
     public IInputService Input => _input;
-
-    private float _currentSpeed;
-
+    public PlayerStateMachine StateMachine => _stateMachine;
     public PlayerData Data => _data;
 
+    private Vector3 _movementDirection;
+    private float _currentSpeed;
+
+    public float VelocityY => _velocityY;
+
     [Inject]
-    public void Construct(IInputService input, CharacterController characterController, AnimationController animationController)
+    public void Construct(IInputService input, 
+        CharacterController characterController, 
+        AnimationController animationController, 
+        SkinnedMeshRenderer meshRenderer,
+        PlayerStateMachine stateMachine)
     {
         _input = input;
         _characterController = characterController;
         _animationController = animationController;
+        _meshRenderer = meshRenderer;
+        _stateMachine = stateMachine;
     }
+    private void Start() => Initialize();
+    private void Initialize()
+    {
+        _meshRenderer.material.color = _data.Color;
+    }
+    public void SetSpeed(float speed) => _currentSpeed = speed;
+    public void SetDirection(Vector3 direction) => _movementDirection = direction;
     public void SetJumpStatus(bool isActive) => _isJumping = isActive;
     public void SetSprintStatus(bool isPressed) => _isSprint = isPressed;
+    private void Update()
+    {
+        ApplyGravity();
+
+        ApplyFinalMovement();
+    }
+    private void ApplyFinalMovement()
+    {
+        Vector3 horizontalMovement = _movementDirection * _currentSpeed;
+        Vector3 finalMovement = horizontalMovement;
+        finalMovement.y = _velocityY;
+
+        _characterController.Move(finalMovement * Time.deltaTime);
+
+        HandleRotation();
+    }
     public void ApplyGravity()
     {
         if (IsGrounded() && _velocityY <= 0)
@@ -49,15 +82,6 @@ public class PlayerBase : MonoBehaviour
     public bool IsMoving() => GetMoveInput().sqrMagnitude > 0.15f;
     public bool IsGrounded() => Physics.CheckSphere(_groundCheck.transform.position, _checkRadius, _checkLayer);
     public void HandleJump() => _velocityY = Mathf.Sqrt(_data.JumpHeight * _data.JumpCoefficient * Physics.gravity.y);
-    public void Move(Vector3 movementDirection)
-    {
-        Vector3 finalMovement = movementDirection * _currentSpeed;
-        finalMovement.y = _velocityY;
-
-        _characterController.Move(finalMovement * Time.deltaTime);
-
-        HandleRotation();
-    }
     private void HandleRotation()
     {
         var moveInput = GetMoveInput();
@@ -67,11 +91,10 @@ public class PlayerBase : MonoBehaviour
         var targetRotation = Quaternion.LookRotation(inputDirection);
         _bodyVisual.transform.rotation = Quaternion.Slerp(_bodyVisual.transform.rotation, targetRotation, _data.RotationSpeed * Time.deltaTime);
     }
-    public void SetCurrentSpeed(float speed) => _currentSpeed = speed;
     public Vector2 GetMoveInput() => _input.MoveInput();
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = _data.Color;
 
         Gizmos.DrawSphere(_groundCheck.position, _checkRadius);
     }

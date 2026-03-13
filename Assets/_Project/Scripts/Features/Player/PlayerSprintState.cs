@@ -9,7 +9,7 @@ public class PlayerSprintState : PlayerGroundedState
     public override void EnterState()
     {
         base.EnterState();
-        _player.SetCurrentSpeed(_player.Data.SprintSpeed);
+        _player.SetSpeed(_player.Data.SprintSpeed);
         _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.SPRINT_HASH, GameConstant.AnimationSettings.QUICK_TRANSITION);
     }
     public override void ExitState()
@@ -23,6 +23,8 @@ public class PlayerSprintState : PlayerGroundedState
         var moveInput = _player.GetMoveInput();
         var inputDirection = new Vector3(moveInput.x, 0f, moveInput.y);
 
-        _player.Move(inputDirection);
+        _player.SetDirection(inputDirection);
+
+        if (!_player.IsMoving()) _stateMachine.SwitchState<PlayerIdleState>();
     }
 }

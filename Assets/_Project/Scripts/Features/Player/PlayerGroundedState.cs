@@ -29,13 +29,18 @@ public abstract class PlayerGroundedState : PlayerBaseState
             return;
         }
 
+        if(!_player.IsGrounded())
+        {
+            _stateMachine.SwitchState<PlayerFallState>();
+            return;
+        }
 
         if (_player.IsMoving())
         {
             if (_player.IsSprint)
                 _stateMachine.SwitchState<PlayerSprintState>();
             else
-                _stateMachine.SwitchState<PlayerMoveState>();
+                _stateMachine.SwitchState<PlayerWalkState>();
         }
         else
             _stateMachine.SwitchState<PlayerIdleState>();
