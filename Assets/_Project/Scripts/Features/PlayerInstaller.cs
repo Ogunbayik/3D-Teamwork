@@ -16,6 +16,7 @@ public class PlayerInstaller : MonoInstaller
         Container.Bind<IState>().To<PlayerIdleState>().AsSingle();
         Container.Bind<IState>().To<PlayerMoveState>().AsSingle();
         Container.Bind<IState>().To<PlayerAirborneState>().AsSingle();
+        Container.Bind<IState>().To<PlayerSprintState>().AsSingle();
 
         Container.BindInterfacesAndSelfTo<PlayerStateMachine>().AsSingle().NonLazy();
 

@@ -16,14 +16,19 @@ public class PlayerBase : MonoBehaviour
     private AnimationController _animationController;
     private CharacterController _characterController;
 
-    private bool _isMoving;
     private bool _isJumping;
+    private bool _isSprint;
 
     private float _velocityY;
-    public bool IsMoving => _isMoving;
     public bool IsJumping => _isJumping;
+    public bool IsSprint => _isSprint;
     public float VelocityY => _velocityY;
     public AnimationController AnimationController => _animationController;
+    public IInputService Input => _input;
+
+    private float _currentSpeed;
+
+    public PlayerData Data => _data;
 
     [Inject]
     public void Construct(IInputService input, CharacterController characterController, AnimationController animationController)
@@ -32,17 +37,8 @@ public class PlayerBase : MonoBehaviour
         _characterController = characterController;
         _animationController = animationController;
     }
-    private void OnEnable()
-    {
-        _input.OnMoveChanged += SetMoveStatus;
-        _input.OnJumpPerformed += Input_OnJumpPerformed;
-    }
-    private void OnDisable()
-    {
-        _input.OnMoveChanged -= SetMoveStatus;
-        _input.OnJumpPerformed -= Input_OnJumpPerformed;
-    }
-    public void SetMoveStatus(Vector2 moveVector) => _isMoving = moveVector != Vector2.zero;
+    public void SetJumpStatus(bool isActive) => _isJumping = isActive;
+    public void SetSprintStatus(bool isPressed) => _isSprint = isPressed;
     public void ApplyGravity()
     {
         if (IsGrounded() && _velocityY <= 0)
@@ -50,11 +46,12 @@ public class PlayerBase : MonoBehaviour
         else
             _velocityY += Physics.gravity.y * _data.GravityMultiplier * Time.deltaTime;
     }
+    public bool IsMoving() => GetMoveInput().sqrMagnitude > 0.15f;
     public bool IsGrounded() => Physics.CheckSphere(_groundCheck.transform.position, _checkRadius, _checkLayer);
     public void HandleJump() => _velocityY = Mathf.Sqrt(_data.JumpHeight * _data.JumpCoefficient * Physics.gravity.y);
     public void Move(Vector3 movementDirection)
     {
-        Vector3 finalMovement = movementDirection * _data.MovementSpeed;
+        Vector3 finalMovement = movementDirection * _currentSpeed;
         finalMovement.y = _velocityY;
 
         _characterController.Move(finalMovement * Time.deltaTime);
@@ -63,17 +60,15 @@ public class PlayerBase : MonoBehaviour
     }
     private void HandleRotation()
     {
-        if(_isMoving)
-        {
-            var moveInput = GetMoveInput();
-            var targetDirection = new Vector3(moveInput.x, 0f, moveInput.y);
-            var targetRotation = Quaternion.LookRotation(targetDirection);
-            transform.rotation = Quaternion.Slerp(_bodyVisual.transform.rotation, targetRotation, _data.RotationSpeed * Time.deltaTime);
-        }
+        var moveInput = GetMoveInput();
+        var inputDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+        if (inputDirection.sqrMagnitude < 0.01f) return;
+
+        var targetRotation = Quaternion.LookRotation(inputDirection);
+        _bodyVisual.transform.rotation = Quaternion.Slerp(_bodyVisual.transform.rotation, targetRotation, _data.RotationSpeed * Time.deltaTime);
     }
+    public void SetCurrentSpeed(float speed) => _currentSpeed = speed;
     public Vector2 GetMoveInput() => _input.MoveInput();
-    private void Input_OnJumpPerformed() => SetJumpStatus(true);
-    public void SetJumpStatus(bool isActive) => _isJumping = isActive;
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;

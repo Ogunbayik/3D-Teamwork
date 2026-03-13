@@ -9,6 +9,7 @@ public class InputService : IInputService, IDisposable
 
     public event Action<Vector2> OnMoveChanged;
     public event Action OnJumpPerformed;
+    public event Action<bool> OnSprintPerformed;
     public InputService()
     {
         _controls = new PlayerControls();
@@ -17,6 +18,9 @@ public class InputService : IInputService, IDisposable
         _controls.Player.Move.canceled += ctx => OnMoveChanged?.Invoke(Vector2.zero);
 
         _controls.Player.Jump.performed += _ => OnJumpPerformed?.Invoke();
+
+        _controls.Player.Sprint.started += _ => OnSprintPerformed?.Invoke(true);
+        _controls.Player.Sprint.canceled += _ => OnSprintPerformed?.Invoke(false);
 
         _controls.Enable();
     }

@@ -8,7 +8,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void EnterState()
     {
         base.EnterState();
-        _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.IDLE_HASH, GameConstant.AnimationSettings.SMOOTH_TRANSITION);
+        _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.IDLE_HASH, 0);
     }
     public override void ExitState()
     {

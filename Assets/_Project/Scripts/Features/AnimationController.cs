@@ -9,6 +9,9 @@ public class AnimationController
     public AnimationController(Animator animator) => _animator = animator;
     public void PlayAnimation(int animationHash, float transitionTime)
     {
+        if (_animator.GetCurrentAnimatorStateInfo(0).shortNameHash == animationHash)
+            return;
+
         _animator.CrossFade(animationHash, transitionTime);
     }
     public bool IsAnimationFinish()

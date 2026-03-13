@@ -11,7 +11,9 @@ public class PlayerAirborneState : IState
     public void SetStateMachine(BaseStateMachine stateMachine) => _stateMachine = stateMachine;
     public void EnterState()
     {
+        _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.JUMP_HASH, GameConstant.AnimationSettings.QUICK_TRANSITION);
         _player.HandleJump();
+        _player.SetSprintStatus(false);
     }
     public void ExitState()
     {
@@ -22,7 +24,7 @@ public class PlayerAirborneState : IState
         _player.ApplyGravity();
 
         var moveInput = _player.GetMoveInput();
-        var inputDirection = new Vector3(moveInput.x, _player.VelocityY, moveInput.y);
+        var inputDirection = new Vector3(moveInput.x, 0f, moveInput.y);
 
         _player.Move(inputDirection);
 
@@ -30,8 +32,13 @@ public class PlayerAirborneState : IState
         {
             _player.SetJumpStatus(false);
 
-            if (_player.IsMoving)
-                _stateMachine.SwitchState<PlayerMoveState>();
+            if (_player.IsMoving())
+            {
+                if (_player.IsSprint)
+                    _stateMachine.SwitchState<PlayerSprintState>();
+                else
+                    _stateMachine.SwitchState<PlayerMoveState>();
+            }
             else
                 _stateMachine.SwitchState<PlayerIdleState>();
         }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Player Data", menuName = "ScriptableObject/Player Data")]
@@ -9,7 +7,8 @@ public class PlayerData : ScriptableObject
     [SerializeField] private string _name;
     [SerializeField] private Color _color;
     [Header("Movement Settings")]
-    [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _walkSpeed;
+    [SerializeField] private float _sprintSpeed;
     [SerializeField] private float _rotationSpeed;
     [Header("Jump Settings")]
     [SerializeField] private float _jumpHeight;
@@ -20,7 +19,8 @@ public class PlayerData : ScriptableObject
 
     public string Name => _name;
     public Color Color => _color;
-    public float MovementSpeed => _movementSpeed;
+    public float WalkSpeed => _walkSpeed;
+    public float SprintSpeed => _sprintSpeed;
     public float RotationSpeed => _rotationSpeed;
     public float JumpHeight => _jumpHeight;
     public float GravityMultiplier => _gravityMultiplier;
