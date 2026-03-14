@@ -8,6 +8,7 @@ public class PlayerJumpState : PlayerAirborneState
 
     public override void EnterState()
     {
+        base.EnterState();
         _player.HandleJump();
         _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.JUMP_HASH, GameConstant.AnimationSettings.QUICK_TRANSITION);
     }
@@ -21,7 +22,7 @@ public class PlayerJumpState : PlayerAirborneState
     {
         base.Tick();
 
-        if (_player.VelocityY <= 0)
+        if (_player.VelocityY <= -1)
             _stateMachine.SwitchState<PlayerFallState>();
     }
 }

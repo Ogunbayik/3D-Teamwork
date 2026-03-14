@@ -10,11 +10,13 @@ public static class GameConstant
         private const string WALK = "Player_Walk";
         private const string SPRINT = "Player_Sprint";
         private const string JUMP = "Player_Jump";
+        private const string FALL = "Player_Fall";
 
         public static readonly int IDLE_HASH = Animator.StringToHash(IDLE);
         public static readonly int WALK_HASH = Animator.StringToHash(WALK);
         public static readonly int SPRINT_HASH = Animator.StringToHash(SPRINT);
         public static readonly int JUMP_HASH = Animator.StringToHash(JUMP);
+        public static readonly int FALL_HASH = Animator.StringToHash(FALL);
     }
     public class AnimationSettings
     {

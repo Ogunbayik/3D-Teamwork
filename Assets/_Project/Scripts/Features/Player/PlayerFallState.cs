@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerFallState : PlayerAirborneState
 {
     public PlayerFallState(PlayerBase player) : base(player) { }
@@ -9,6 +8,8 @@ public class PlayerFallState : PlayerAirborneState
     public override void EnterState()
     {
         Debug.Log("Play Fall animation");
+        base.EnterState();
+        _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.FALL_HASH, GameConstant.AnimationSettings.SMOOTH_TRANSITION);
     }
 
     public override void ExitState()
@@ -20,9 +21,9 @@ public class PlayerFallState : PlayerAirborneState
         base.Tick();
 
         if (_player.IsGrounded())
-            HandleLanding();
+            HandleOnGround();
     }
-    private void HandleLanding()
+    private void HandleOnGround()
     {
         _player.SetJumpStatus(false);
 

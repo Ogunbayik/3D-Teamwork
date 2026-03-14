@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f8fa18c556fcb42b751fc059d55158, type: 3}
   m_Name: Green Player
   m_EditorClassIdentifier: 
-  _name: Green Player
+  _identity: 1
   _color: {r: 0.18707037, g: 1, b: 0, a: 1}
   _walkSpeed: 2
   _sprintSpeed: 5

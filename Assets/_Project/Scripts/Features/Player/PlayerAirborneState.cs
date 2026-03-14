@@ -8,7 +8,10 @@ public abstract class PlayerAirborneState : IState
     protected BaseStateMachine _stateMachine;
     public PlayerAirborneState(PlayerBase player) => _player = player;
     public void SetStateMachine(BaseStateMachine stateMachine) => _stateMachine = stateMachine;
-    public abstract void EnterState();
+    public virtual void EnterState()
+    {
+        _player.SetSprintStatus(false);
+    }
     public abstract void ExitState();
     public virtual void Tick()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [Header("Player Identity")]
-    [SerializeField] private string _name;
+    [SerializeField] private PlayerIdentity _identity;
     [SerializeField] private Color _color;
     [Header("Movement Settings")]
     [SerializeField] private float _walkSpeed;
@@ -17,7 +17,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] private float _groundedGravity;
     [SerializeField] private float _jumpCoefficient;
 
-    public string Name => _name;
+    public PlayerIdentity Identity => _identity;
     public Color Color => _color;
     public float WalkSpeed => _walkSpeed;
     public float SprintSpeed => _sprintSpeed;
