@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 using Zenject;
 
@@ -10,9 +11,12 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private float _checkRadius;
     [SerializeField] private LayerMask _checkLayer;
+    [Header("Camera Settings")]
+    [SerializeField] public CinemachineVirtualCamera _playerCamera;
 
     private IInputService _input;
 
+    private CameraManager _cameraManager;
     private PlayerStateMachine _stateMachine;
     private AnimationController _animationController;
     private CharacterController _characterController;
@@ -39,18 +43,21 @@ public class PlayerBase : MonoBehaviour
         CharacterController characterController, 
         AnimationController animationController, 
         SkinnedMeshRenderer meshRenderer,
-        PlayerStateMachine stateMachine)
+        PlayerStateMachine stateMachine,
+        CameraManager cameraManager)
     {
         _input = input;
         _characterController = characterController;
         _animationController = animationController;
         _meshRenderer = meshRenderer;
         _stateMachine = stateMachine;
+        _cameraManager = cameraManager;
     }
     private void Start() => Initialize();
     private void Initialize()
     {
         _meshRenderer.material.color = _data.Color;
+        _cameraManager.RegisterCamera(_playerCamera);
     }
     public void SetSpeed(float speed) => _currentSpeed = speed;
     public void SetDirection(Vector3 direction) => _movementDirection = direction;

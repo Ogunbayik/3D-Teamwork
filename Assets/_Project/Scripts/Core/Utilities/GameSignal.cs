@@ -7,7 +7,7 @@ public static class GameSignal
 {
     public class OnPlayerSwapSignal
     {
-        public PlayerIdentity Identity;
-        public OnPlayerSwapSignal(PlayerIdentity identity) => Identity = identity;
+        public PlayerIdentity NewPlayerIdentity;
+        public OnPlayerSwapSignal(PlayerIdentity newPlayerIdentity) => NewPlayerIdentity = newPlayerIdentity;
     }
 }

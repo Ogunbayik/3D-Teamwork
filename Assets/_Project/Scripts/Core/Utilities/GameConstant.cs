@@ -29,4 +29,10 @@ public static class GameConstant
         public const float SMOOTH_TRANSITION = 0.25f;
         public const float HEAVT_TRANSITION = 0.4f;
     }
+    public class CameraPriority
+    {
+        public const int ACTIVE_PRIORITY = 15;
+        public const int DEACTIVE_PRIORITY = 5;
+
+    }
 }
