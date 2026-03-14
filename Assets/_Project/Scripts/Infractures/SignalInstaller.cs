@@ -8,5 +8,9 @@ public class SignalInstaller : MonoInstaller
         SignalBusInstaller.Install(Container);
 
         Container.DeclareSignal<GameSignal.OnPlayerSwapSignal>();
+
+        Container.BindSignal<GameSignal.OnPlayerSwapSignal>()
+            .ToMethod<SwapManager>(x => x.SwapPlayer)
+            .FromResolve();
     }
 }

@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -563,6 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462c75cbb3819de448cc24931d48e9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _identity: 0
   _swapButton: {fileID: 297365974}
 --- !u!1 &317357272
 GameObject:
@@ -911,6 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9cacaa3c06aa14faa7d1beab6b13f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _swapManager: {fileID: 848274946}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1240,6 +1242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462c75cbb3819de448cc24931d48e9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _identity: 1
   _swapButton: {fileID: 1441262297}
 --- !u!1 &1441471690
 GameObject:

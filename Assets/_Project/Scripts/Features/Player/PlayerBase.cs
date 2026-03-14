@@ -91,6 +91,16 @@ public class PlayerBase : MonoBehaviour
         var targetRotation = Quaternion.LookRotation(inputDirection);
         _bodyVisual.transform.rotation = Quaternion.Slerp(_bodyVisual.transform.rotation, targetRotation, _data.RotationSpeed * Time.deltaTime);
     }
+    public void DeactivatePlayer()
+    {
+        _stateMachine.SwitchState<PlayerPassiveState>();
+        enabled = false;
+    }
+    public void ActivatePlayer()
+    {
+        enabled = true;
+        _stateMachine.SwitchState<PlayerIdleState>();
+    }
     public Vector2 GetMoveInput() => _input.MoveInput();
     private void OnDrawGizmos()
     {

@@ -12,7 +12,7 @@ public class AnimationController
         if (_animator.GetCurrentAnimatorStateInfo(0).shortNameHash == animationHash)
             return;
 
-        _animator.CrossFade(animationHash, transitionTime);
+        _animator.CrossFadeInFixedTime(animationHash, transitionTime);
     }
     public bool IsAnimationFinish()
     {

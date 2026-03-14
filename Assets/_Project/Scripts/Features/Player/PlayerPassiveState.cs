@@ -9,7 +9,7 @@ public class PlayerPassiveState : PlayerBaseState
     public override void EnterState()
     {
         //TODO Player için dinlenme animasyonu eklenecek.
-        Debug.Log("Passive");
+        _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.PASSIVE_HASH, GameConstant.AnimationSettings.SMOOTH_TRANSITION);
     }
     public override void ExitState()
     {

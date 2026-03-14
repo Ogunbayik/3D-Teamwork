@@ -2,9 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
+using Cysharp.Threading.Tasks;
+using System;
 
 public class SwapManager : MonoBehaviour
 {
+    private const float _standUpDuration = 6.1f;
+
+    private SignalBus _signalBus;
+
+    [Inject]
+    public void Construct(SignalBus signalBus) => _signalBus = signalBus;
+
     [Header("Player References")]
     [SerializeField] private List<PlayerBase> _players = new List<PlayerBase>();
 
@@ -13,23 +23,42 @@ public class SwapManager : MonoBehaviour
     private void Initialize()
     {
         _activePlayer = _players[0];
-    }
 
-    private void Update()
+        foreach (var player in _players)
+        {
+            if (player != _activePlayer)
+                player.DeactivatePlayer();
+        }
+
+        _activePlayer.ActivatePlayer();
+    }
+    public void SwapPlayer(GameSignal.OnPlayerSwapSignal signal)
     {
-        if(Input.GetKeyDown(KeyCode.T) && CanSwap())
+        if (_activePlayer.Data.Identity == signal.Identity)
+            return;
+
+        SwapPlayerSequence(signal).Forget();
+    }
+    private async UniTask SwapPlayerSequence(GameSignal.OnPlayerSwapSignal signal)
+    {
+        if(CanSwap())
         {
             foreach (var player in _players)
-            {
-                player.StateMachine.SwitchState<PlayerPassiveState>();
-                player.enabled = false;
-            }
+                player.DeactivatePlayer();
 
-            _activePlayer = _players[0];
-            _activePlayer.enabled = true;
-            _activePlayer.StateMachine.SwitchState<PlayerIdleState>();
+            _activePlayer = null;
+            _activePlayer = _players.Find(player => player.Data.Identity == signal.Identity);
+            _activePlayer.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.STAND_UP_HASH, GameConstant.AnimationSettings.SMOOTH_TRANSITION);
+
+            await UniTask.Delay(TimeSpan.FromSeconds(_standUpDuration));
+
+            _activePlayer.ActivatePlayer();
+        }
+        else
+        {
+            //TODO Uyarý yazýsý eklenecek.
+            Debug.Log("Player only can Swap on grounded");
         }
     }
-    public void AddPlayer(PlayerBase player) => _players.Add(player);
     public bool CanSwap() => _activePlayer.IsGrounded();
 }

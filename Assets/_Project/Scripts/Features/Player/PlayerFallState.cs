@@ -7,7 +7,6 @@ public class PlayerFallState : PlayerAirborneState
 
     public override void EnterState()
     {
-        Debug.Log("Play Fall animation");
         base.EnterState();
         _player.AnimationController.PlayAnimation(GameConstant.PlayerAnimation.FALL_HASH, GameConstant.AnimationSettings.SMOOTH_TRANSITION);
     }

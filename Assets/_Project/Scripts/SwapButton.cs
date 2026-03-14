@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class SwapButton : MonoBehaviour
 {
-    [Header("UI References")]
-    [SerializeField] private Button _swapButton;
-    void Start()
-    {
-        
-    }
+    private SignalBus _signalBus;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Inject]
+    public void Construct(SignalBus signalBus) => _signalBus = signalBus;
+
+    [Header("UI References")]
+    [SerializeField] private PlayerIdentity _identity;
+    [SerializeField] private Button _swapButton;
+    void Start() => _swapButton.onClick.AddListener(() => RequestSwapSignal());
+    private void RequestSwapSignal() => _signalBus.Fire(new GameSignal.OnPlayerSwapSignal(_identity));
 }
